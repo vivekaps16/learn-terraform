@@ -4,5 +4,4 @@ resource "aws_instance" "frontend" {
   
 }
 
-
 hello
