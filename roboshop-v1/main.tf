@@ -8,6 +8,14 @@ resource "aws_instance" "frontend" {
   
 }
 
+resource "aws_route53_record" "frontend" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "frontend-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
+}
+
 resource "aws_instance" "Mmongodb" {
     ami = "ami-09c813fb71547fc4f"
     instance_type = "t3.small"
@@ -16,6 +24,14 @@ resource "aws_instance" "Mmongodb" {
       Name = "mongodb" 
     }
   
+}
+
+resource "aws_route53_record" "mongodb" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "mongodb-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
 }
 
 resource "aws_instance" "catalogue" {
@@ -28,6 +44,14 @@ resource "aws_instance" "catalogue" {
   
 }
 
+resource "aws_route53_record" "catalogue" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "catalogue-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
+}
+
 resource "aws_instance" "redis" {
     ami = "ami-09c813fb71547fc4f"
     instance_type = "t3.small"
@@ -36,6 +60,14 @@ resource "aws_instance" "redis" {
       Name = "redis" 
     }
   
+}
+
+resource "aws_route53_record" "redis" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "redis-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
 }
 
 resource "aws_instance" "user" {
@@ -48,6 +80,13 @@ resource "aws_instance" "user" {
   
 }
 
+resource "aws_route53_record" "user" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "user-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
+}
 
 resource "aws_instance" "cart" {
     ami = "ami-09c813fb71547fc4f"
@@ -57,6 +96,14 @@ resource "aws_instance" "cart" {
       Name = "cart" 
     }
   
+}
+
+resource "aws_route53_record" "cart" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "cart-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
 }
 
 
@@ -70,6 +117,14 @@ resource "aws_instance" "mysql" {
   
 }
 
+resource "aws_route53_record" "mysql" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "mysql-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
+}
+
 
 resource "aws_instance" "shipping" {
     ami = "ami-09c813fb71547fc4f"
@@ -79,6 +134,14 @@ resource "aws_instance" "shipping" {
       Name = "shipping" 
     }
   
+}
+
+resource "aws_route53_record" "shipping" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "shipping-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
 }
 
 
@@ -92,6 +155,14 @@ resource "aws_instance" "rabbitmq" {
   
 }
 
+resource "aws_route53_record" "rabbitmq" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "rabbitmq-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
+}
+
 
 resource "aws_instance" "payment" {
     ami = "ami-09c813fb71547fc4f"
@@ -103,6 +174,14 @@ resource "aws_instance" "payment" {
   
 }
 
+resource "aws_route53_record" "payment" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "payment-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
+}
+
 
 resource "aws_instance" "dispatch" {
     ami = "ami-09c813fb71547fc4f"
@@ -112,4 +191,12 @@ resource "aws_instance" "dispatch" {
       Name = "dispatch" 
     }
   
+}
+
+resource "aws_route53_record" "dispatch" {
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
+  name    = "dispatch-dev.devopspractice.info"
+  type    = "A"
+  ttl     = "30"
+  records = [aws.instance.frontend.private_ip]
 }
