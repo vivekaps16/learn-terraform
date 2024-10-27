@@ -31,7 +31,7 @@ resource "aws_route53_record" "mongodb" {
   name    = "mongodb-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.mongodb.private_ip]
 }
 
 resource "aws_instance" "catalogue" {
@@ -49,7 +49,7 @@ resource "aws_route53_record" "catalogue" {
   name    = "catalogue-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.catalogue.private_ip]
 }
 
 resource "aws_instance" "redis" {
@@ -67,7 +67,7 @@ resource "aws_route53_record" "redis" {
   name    = "redis-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.redis.private_ip]
 }
 
 resource "aws_instance" "user" {
@@ -85,7 +85,7 @@ resource "aws_route53_record" "user" {
   name    = "user-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.user.private_ip]
 }
 
 resource "aws_instance" "cart" {
@@ -103,7 +103,7 @@ resource "aws_route53_record" "cart" {
   name    = "cart-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.cart.private_ip]
 }
 
 
@@ -122,7 +122,7 @@ resource "aws_route53_record" "mysql" {
   name    = "mysql-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.mysql.private_ip]
 }
 
 
@@ -141,7 +141,7 @@ resource "aws_route53_record" "shipping" {
   name    = "shipping-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.shipping.private_ip]
 }
 
 
@@ -160,7 +160,7 @@ resource "aws_route53_record" "rabbitmq" {
   name    = "rabbitmq-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.rabbitmq.private_ip]
 }
 
 
@@ -179,7 +179,7 @@ resource "aws_route53_record" "payment" {
   name    = "payment-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.payment.private_ip]
 }
 
 
@@ -198,5 +198,5 @@ resource "aws_route53_record" "dispatch" {
   name    = "dispatch-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
-  records = [aws.instance.frontend.private_ip]
+  records = [aws.instance.dispatch.private_ip]
 }
