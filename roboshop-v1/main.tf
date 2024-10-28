@@ -23,6 +23,7 @@ resource "aws_instance" "frontend" {
   tags = {
     Name = "frontend" 
   }
+
 }
 
 resource "aws_route53_record" "frontend" {
@@ -40,6 +41,7 @@ resource "aws_instance" "mongodb" {
   tags = {
     Name = "mongodb" 
   }
+  
 }
 
 resource "aws_route53_record" "mongodb" {
@@ -57,6 +59,7 @@ resource "aws_instance" "catalogue" {
   tags = {
     Name = "catalogue" 
   }
+  
 }
 
 resource "aws_route53_record" "catalogue" {
@@ -74,6 +77,7 @@ resource "aws_instance" "redis" {
   tags = {
     Name = "redis" 
   }
+  
 }
 
 resource "aws_route53_record" "redis" {
@@ -91,6 +95,7 @@ resource "aws_instance" "user" {
   tags = {
     Name = "user" 
   }
+  
 }
 
 resource "aws_route53_record" "user" {
@@ -107,7 +112,8 @@ resource "aws_instance" "cart" {
   vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
   tags = {
     Name = "cart" 
-  }  
+  }
+  
 }
 
 resource "aws_route53_record" "cart" {
@@ -125,7 +131,8 @@ resource "aws_instance" "mysql" {
   vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
   tags = {
     Name = "mysql" 
-  }  
+  }
+  
 }
 
 resource "aws_route53_record" "mysql" {
@@ -143,7 +150,8 @@ resource "aws_instance" "shipping" {
   vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
   tags = {
     Name = "shipping" 
-  }  
+  }
+  
 }
 
 resource "aws_route53_record" "shipping" {
@@ -161,7 +169,8 @@ resource "aws_instance" "rabbitmq" {
   vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
   tags = {
     Name = "rabbitmq" 
-  }  
+  }
+  
 }
 
 resource "aws_route53_record" "rabbitmq" {
@@ -179,7 +188,8 @@ resource "aws_instance" "payment" {
   vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
   tags = {
     Name = "payment" 
-  }  
+  }
+  
 }
 
 resource "aws_route53_record" "payment" {
@@ -197,7 +207,8 @@ resource "aws_instance" "dispatch" {
   vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
   tags = {
     Name = "dispatch" 
-  }  
+  }
+  
 }
 
 resource "aws_route53_record" "dispatch" {
