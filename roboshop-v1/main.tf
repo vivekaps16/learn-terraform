@@ -1,15 +1,33 @@
+#resource "aws_instance" "frontend" {
+#  ami           = "ami-09c813fb71547fc4f"
+#  instance_type = "t3.small"
+#  vpc_security_group_ids = ["sg-0be95cb0c3fef9448"]
+#  tags = {
+#    Name = "frontend"
+#  }
+#}
+#
+#resource "aws_route53_record" "frontend" {
+#  zone_id = "Z02249652EM5BAO495DZ1"
+#  name    = "frontend-dev.rdevopsb81.online"
+#  type    = "A"
+#  ttl     = "30"
+#  records = [aws_instance.frontend.private_ip]
+#}
+
+
 resource "aws_instance" "frontend" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "frontend" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "frontend" 
+  }
   
 }
 
 resource "aws_route53_record" "frontend" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "frontend-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -17,17 +35,17 @@ resource "aws_route53_record" "frontend" {
 }
 
 resource "aws_instance" "Mmongodb" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "mongodb" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "mongodb" 
+  }
   
 }
 
 resource "aws_route53_record" "mongodb" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "mongodb-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -35,17 +53,17 @@ resource "aws_route53_record" "mongodb" {
 }
 
 resource "aws_instance" "catalogue" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "catalogue" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "catalogue" 
+  }
   
 }
 
 resource "aws_route53_record" "catalogue" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "catalogue-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -53,17 +71,17 @@ resource "aws_route53_record" "catalogue" {
 }
 
 resource "aws_instance" "redis" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "redis" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "redis" 
+  }
   
 }
 
 resource "aws_route53_record" "redis" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "redis-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -71,17 +89,17 @@ resource "aws_route53_record" "redis" {
 }
 
 resource "aws_instance" "user" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "user" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "user" 
+  }
   
 }
 
 resource "aws_route53_record" "user" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "user-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -89,17 +107,17 @@ resource "aws_route53_record" "user" {
 }
 
 resource "aws_instance" "cart" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "cart" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "cart" 
+  }
   
 }
 
 resource "aws_route53_record" "cart" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "cart-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -108,17 +126,17 @@ resource "aws_route53_record" "cart" {
 
 
 resource "aws_instance" "mysql" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "mysql" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "mysql" 
+  }
   
 }
 
 resource "aws_route53_record" "mysql" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "mysql-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -127,17 +145,17 @@ resource "aws_route53_record" "mysql" {
 
 
 resource "aws_instance" "shipping" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "shipping" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "shipping" 
+  }
   
 }
 
 resource "aws_route53_record" "shipping" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "shipping-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -146,17 +164,17 @@ resource "aws_route53_record" "shipping" {
 
 
 resource "aws_instance" "rabbitmq" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "rabbitmq" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "rabbitmq" 
+  }
   
 }
 
 resource "aws_route53_record" "rabbitmq" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "rabbitmq-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -165,17 +183,17 @@ resource "aws_route53_record" "rabbitmq" {
 
 
 resource "aws_instance" "payment" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "payment" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "payment" 
+  }
   
 }
 
 resource "aws_route53_record" "payment" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "payment-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
@@ -184,17 +202,17 @@ resource "aws_route53_record" "payment" {
 
 
 resource "aws_instance" "dispatch" {
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.small"
-    vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
-    tags = {
-      Name = "dispatch" 
-    }
+  ami = "ami-09c813fb71547fc4f"
+  instance_type = "t3.small"
+  vpc_security_group_ids= ["sg-07a0852eaf0b31296"]
+  tags = {
+    Name = "dispatch" 
+  }
   
 }
 
 resource "aws_route53_record" "dispatch" {
-  zone_id = "Z06362873ENTBVG3OQMG8"
+  zone_id = "${Z06362873ENTBVG3OQMG8}"
   name    = "dispatch-dev.devopspractice.info"
   type    = "A"
   ttl     = "30"
