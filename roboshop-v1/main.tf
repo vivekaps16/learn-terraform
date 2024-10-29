@@ -1,21 +1,3 @@
-#resource "aws_instance" "frontend" {
-#  ami           = "ami-09c813fb71547fc4f"
-#  instance_type = "t3.small"
-#  vpc_security_group_ids = ["sg-0be95cb0c3fef9448"]
-#  tags = {
-#    Name = "frontend"
-#  }
-#}
-#
-#resource "aws_route53_record" "frontend" {
-#  zone_id = "Z02249652EM5BAO495DZ1"
-#  name    = "frontend-dev.rdevopsb81.online"
-#  type    = "A"
-#  ttl     = "30"
-#  records = [aws_instance.frontend.private_ip]
-#}
-
-
 resource "aws_instance" "frontend" {
   ami = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
