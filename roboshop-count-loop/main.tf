@@ -1,17 +1,17 @@
 variable "instances" {
-    default = [
-      "frontend",
-      "cart",
-      "mysql",
-      "mongodb",
-      "user",
-      "redis",
-      "catalogue",
-      "payment",
-      "rabbitmq",
-      "shipping",
-      "dispatch",
-     ]
+  default = [
+    "frontend",
+    "cart",
+    "mysql",
+    "mongodb",
+    "user",
+    "redis",
+    "catalogue",
+    "payment",
+    "rabbitmq",
+    "shipping",
+    "dispatch",
+   ]
 }
 
 resource "aws_instance" "instance" {
