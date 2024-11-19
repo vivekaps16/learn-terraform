@@ -1,17 +1,18 @@
 provider "vault" {
-  address = "http://127.0.0.1:8200"
-  token   = var.vault.token
+  address = "http://172.31.85.68:8200"
+  token   = var.vault_token
   skip_tls_verification = true
 }
 
 variable "vault_token" {}
 
-data "vault_generic_secret" "example" {
-  path = "test/my_credentials"  
+data "vault_kv_secret_v2" "example" {
+  name = "credentials"
+  mount = "test"
 }
 
 
-resource "local_file" "foo" {
-  content  = data.vault_generic_secret.example.data["password"]
-  filename = "/tmp/secret"  
-}
+#resource "local_file" "foo" {
+#  content  = data.vault_generic_secret.example.data["password"]
+#  filename = "/tmp/secret"  
+#}
